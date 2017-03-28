@@ -35,7 +35,8 @@ public class LoginFileCheck {
         
         String user = null;
         String pass = null;
-        ArrayList<String> scores = new ArrayList<>();
+        String score = null;
+        //ArrayList<String> scores = new ArrayList<>();
         //String[] scores = new String[3];
 
        
@@ -44,7 +45,7 @@ public class LoginFileCheck {
             user = read.nextLine();
             //System.out.println(user);
             pass = read.nextLine();
-            String score = read.nextLine();
+            score = read.nextLine();
             //System.out.println(pass);
             //read.next();
             
@@ -52,7 +53,15 @@ public class LoginFileCheck {
             {
                 System.out.println("Welcome back!");
                 
-              /*  for(int i=0; i<score.; i++)
+                String[] scorecollect = score.split(",");
+                for(int i =0; i<scorecollect.length; i++)
+                {
+                 System.out.print(scorecollect[i]+", ");   
+                }
+                
+                
+                
+               /*  for(int i=0; i<score.; i++)
                 {
                     read.useDelimiter(",");
                     scores.add(read.next());

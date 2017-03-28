@@ -9,7 +9,7 @@ package quizz;
  *
  * @author kukiagy
  */
-public class quizz {
+public class main {
     public static void main(String [] args) {
         LoginStart quizz = new LoginStart();
     

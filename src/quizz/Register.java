@@ -69,6 +69,12 @@ public class Register {
 
                 PrintWriter outputStream = null;
 
+
+                   outputStream.println(username);
+                   outputStream.println(password);
+                   outputStream.println("0");
+
+                   outputStream.close();
                 try {
                     outputStream =
                             new PrintWriter(new FileOutputStream ("logindetails.txt", true ));
