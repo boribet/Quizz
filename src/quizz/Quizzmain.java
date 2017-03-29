@@ -5,6 +5,7 @@
  */
 package quizz;
 
+import java.sql.*;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -19,7 +20,22 @@ public class Quizzmain {
     
     //public Quizzmain() throws IOException{
     public static void main(String[] args) throws IOException {
+        try
+    {
+        System.out.println("Driver Loaded");
         
+        //Connection conn = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8166215","sql8166215","rins6mGcbF");
+
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sql8166215","root","UsUvji:yZ0&E");
+        //Database Name - testDB, Username - "root", Password - ""
+        
+        System.out.println("Connected...");         
+    } catch(SQLException e) {
+        System.err.println(e);
+    }
+
+        
+        /*
         Scanner scan = new Scanner(System.in);
         
         int actualscore, actualfailed, actualskipped, actualcheated;
@@ -107,7 +123,7 @@ public class Quizzmain {
             System.out.println("It's a tie");
         else
             System.out.println("The computer wins!");
-                
+         */       
         }
                 
         }

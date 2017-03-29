@@ -33,46 +33,41 @@ public class LoginFileCheck {
             
         }
         
-        String user = null;
-        String pass = null;
-        String score = null;
-        //ArrayList<String> scores = new ArrayList<>();
-        //String[] scores = new String[3];
+        ArrayList<String> scores = new ArrayList<String>();
+        ArrayList<String> usernames = new ArrayList<String>();
+        ArrayList<String> passwords = new ArrayList<String>();
+        ArrayList<String> allusers = new ArrayList<String>();
 
        
         
-        while(read.hasNextLine()){
-            user = read.nextLine();
-            //System.out.println(user);
-            pass = read.nextLine();
-            score = read.nextLine();
-            //System.out.println(pass);
-            //read.next();
-            
-            if(user.equals(username.getUsername()) && pass.equals(password.getPassword()))
+        for(int i =0; read.hasNextLine();i++)
             {
-                System.out.println("Welcome back!");
+                allusers.add(read.nextLine());
+               
                 
-                String[] scorecollect = score.split(",");
-                for(int i =0; i<scorecollect.length; i++)
-                {
-                 System.out.print(scorecollect[i]+", ");   
-                }
-                
-                
-                
-               /*  for(int i=0; i<score.; i++)
-                {
-                    read.useDelimiter(",");
-                    scores.add(read.next());
-                    System.out.println(scores);
-
-                } */
-                
-                System.exit(0);
-                break;
             }
-        }   
+            
+            for(int j = 0; j<allusers.size() ; j++)
+           {
+                String [] alfa = allusers.get(j).split(";");
+                usernames.add(alfa[0]);
+                passwords.add(alfa[1]);
+                scores.add(alfa[2]);              
+            }
+
+
+            for(int i = 0; i<usernames.size();i++)
+            {
+
+                if(usernames.get(i).equals(username.getUsername()) && passwords.get(i).equals(password.getPassword()))
+                {
+                    System.out.println("Welcome back!");
+                    System.exit(0);
+                    break;
+                
+                }
+               
+            
 
             System.out.println("Username and password don't match Press R to register or B to try again. ");
             String action = scan.nextLine();
@@ -88,7 +83,7 @@ public class LoginFileCheck {
                     break;
                     
             }
-            
+            }
         
 
 }

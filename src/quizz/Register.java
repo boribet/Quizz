@@ -22,6 +22,9 @@ public class Register {
    
     private String username;   // "red" or "green"
     private String password;      // between 1 and 10
+    private String name;
+    private String pass;
+    private String scorelist;
 
     public Register()
             
@@ -40,51 +43,66 @@ public class Register {
         System.out.println("Enter a new username: ");
         username = scan.nextLine();
         
-        String user = null;
-        String pass = null;
-        //ArrayList<Integer> scores = new ArrayList<Integer>();
-        String score = null;
+        ArrayList<String> scores = new ArrayList<String>();
+        ArrayList<String> usernames = new ArrayList<String>();
+        ArrayList<String> passwords = new ArrayList<String>();
+        ArrayList<String> allusers = new ArrayList<String>();
         
        
-        while(read.hasNextLine())
-        {
-            user = read.nextLine();
-            pass = read.nextLine();
-            score = read.nextLine();
-            
-           
-            //read.next();
-            
-            if(user.equals(username))
+            for(int i = 0; read.hasNextLine();i++)
             {
-                System.out.println("That username is already taken! \n");
-                Register register = new Register();
-
+                allusers.add(read.nextLine());
+                System.out.println("mindenki: "+allusers);
+               
+                
             }
-        
-        }    
+            
+            for(int j = 0; j<allusers.size() ; j++)
+           {
+                String [] alfa = allusers.get(j).split(";");
+                usernames.add(alfa[0]);
+                passwords.add(alfa[1]);
+                scores.add(alfa[2]);              
+            }
+
+
+            for(int i = 0; i<usernames.size();i++)
+            {
+                if(usernames.get(i).equals(username))
+                {
+                    System.out.println("That username is already taken! \n");
+                    Register register = new Register();
+
+                }
+            }
+           
             
                 System.out.println("Enter a password: ");
                 password = scan.nextLine();
+                
+                usernames.add(username);
+                passwords.add(password);
 
                 PrintWriter outputStream = null;
 
 
-                   outputStream.println(username);
-                   outputStream.println(password);
-                   outputStream.println("0");
+               //    outputStream.println(usernames);
+                //   outputStream.println(passwords);
+                //   outputStream.println(scores);
 
-                   outputStream.close();
-                try {
+               //    outputStream.close();
+                   
+                try 
+                {
                     outputStream =
                             new PrintWriter(new FileOutputStream ("logindetails.txt", true ));
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                   outputStream.println(username);
-                   outputStream.println(password);
-                   outputStream.println("0");
+                   outputStream.println(usernames);
+                   outputStream.println(passwords);
+                   outputStream.println(scores);
 
                    outputStream.close();
 

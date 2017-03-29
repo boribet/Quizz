@@ -1,0 +1,82 @@
+package quizz;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+/**
+ *
+ * @author zceibet
+ */
+public class Register {
+
+    Scanner scan = new Scanner(System.in);
+   
+    private String username;   // "red" or "green"
+    private String password;      // between 1 and 10
+    private String name;
+    private String pass;
+    private String scorelist;
+
+    public Register()
+            
+    {
+        Scanner read = null;
+        try{
+            read = new Scanner (new FileInputStream("logindetails.txt"));
+
+        }
+
+        catch (FileNotFoundException ex){
+            Logger.getLogger(LoginFileCheck.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+        
+        System.out.println("Enter a new username: ");
+        username = scan.nextLine();
+        
+        ArrayList<String> scores = new ArrayList<String>();
+        ArrayList<String> usernames = new ArrayList<String>();
+        ArrayList<String> passwords = new ArrayList<String>();
+        ArrayList<String> allusers = new ArrayList<String>();
+        
+       
+            for(int i =0; read.hasNextLine();i++)
+            {
+                allusers.add(read.nextLine());
+                
+            }
+            
+            for(int j = 0; allusers.size()>0 ; j++)
+            {
+                String [] alfa = null;
+                alfa = allusers.get(j).split("'");
+                usernames.add(alfa[0]);
+                
+             /*   
+                for(int k = 0; alfa.length>0; k++)
+                {
+                  String[] beta = alfa[k].split(";");
+                  passwords.add(beta[1]);
+                
+                /*
+                    for(int h = 0; beta.length>0; h++)
+                {
+                  String[] gamma = beta[h].split(";");
+                  scores.add(gamma[2]);
+                  */
+                  
+                
+                
+                
+            }
+            System.out.println("midnenki: "+ allusers.toString());
+            System.out.println("uns: "+ usernames.toString());
+            //System.out.println("passs: "+ passwords.toString());
+           // System.out.println("scrss: "+ scores.toString());
+            
+            
+    }}

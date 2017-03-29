@@ -10,9 +10,11 @@ package quizz;
  * @author kukiagy
  */
 public class main {
-    public static void main(String [] args) {
-        LoginStart quizz = new LoginStart();
+    public static void main(String [] args) 
+    {
+       //LoginStart quizz = new LoginStart();
+        LoginFileCheck test = new LoginFileCheck();
     
-}
+                  }
     
-}
+    }

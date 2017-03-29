@@ -1,6 +1,2 @@
-boci
-boci
-1,2,3,4
-maki
-maki
-0
+boci;boci;0/3/6/4
+dani;dani;12/65/2/1/5

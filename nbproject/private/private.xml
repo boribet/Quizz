@@ -3,13 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/QuestionsQuizz.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/ScoreOrd.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/PasswordIn.java</file>
-            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/quizz.java</file>
+            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/computer.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/LoginFileCheck.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/Register.java</file>
+            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/main.java</file>
+            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/Quizzmain_oldvers.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/Quizzmain.java</file>
             <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/UsernameIn.java</file>
+            <file>file:/Users/home/NetBeansProjects/Quizz/src/quizz/ReadFile.java</file>
         </group>
     </open-files>
 </project-private>
