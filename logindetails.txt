@@ -1,2 +1,2 @@
-[boci,boci,0/4/5/6]
-[dani,dani,2/2/3/4]
+lak,lak,7/5/4/2
+boci,boci,0

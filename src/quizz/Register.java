@@ -76,12 +76,6 @@ public class Register {
             }
 
             
-            System.out.println("mindenki: "+ allusers);
-            System.out.println("u: "+ usernames);
-            
-            
-/*
-
             for(int i = 0; i<usernames.size();i++)
             {
                 if(usernames.get(i).equals(username))
@@ -108,11 +102,17 @@ public class Register {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
                 for (int i =0; i<usernames.size(); i++)
-            {
-                   outputStream.println(usernames.get(i));
-                   outputStream.println(passwords.get(i));
-                   outputStream.println(0);
+                {
+                  if(i==usernames.size()-1)
+                   {
+                    outputStream.println(usernames.get(i)+","+passwords.get(i)+","+"0");
+                   }
+                   else
+                    outputStream.println(usernames.get(i)+","+passwords.get(i)+","+scores.get(i));
+                    
+                   
             }
 
                    outputStream.close();
@@ -121,7 +121,6 @@ public class Register {
                 System.out.println("Now log in. ");
                 LoginFileCheck login1 = new LoginFileCheck();
             
-*/
         
     }
 }
