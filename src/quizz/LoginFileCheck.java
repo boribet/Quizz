@@ -49,10 +49,18 @@ public class LoginFileCheck {
             
             for(int j = 0; j<allusers.size() ; j++)
            {
-                String [] alfa = allusers.get(j).split(";");
+                String [] alfa = allusers.get(j).split(",");
                 usernames.add(alfa[0]);
                 passwords.add(alfa[1]);
-                scores.add(alfa[2]);              
+                scores.add(alfa[2]); 
+                
+            if (j==0)
+                {
+            usernames.get(j).equals(allusers.get(j).replace("[", ""));  //remove the right bracket
+            usernames.get(j).equals(allusers.get(j).replace("]", ""));  //remove the left bracket
+            usernames.get(j).equals(allusers.get(j).trim());   
+                }
+            
             }
 
 
@@ -66,6 +74,7 @@ public class LoginFileCheck {
                     break;
                 
                 }
+            }
                
             
 
@@ -86,5 +95,4 @@ public class LoginFileCheck {
             }
         
 
-}
 }

@@ -51,20 +51,36 @@ public class Register {
        
             for(int i = 0; read.hasNextLine();i++)
             {
-                allusers.add(read.nextLine());
-                System.out.println("mindenki: "+allusers);
-               
-                
+                allusers.add(read.nextLine()); 
             }
+                
             
             for(int j = 0; j<allusers.size() ; j++)
-           {
-                String [] alfa = allusers.get(j).split(";");
+           {    
+
+                String [] alfa = allusers.get(j).split(",");
                 usernames.add(alfa[0]);
                 passwords.add(alfa[1]);
-                scores.add(alfa[2]);              
+                scores.add(alfa[2]);
+                
+            if (j==0 || j+1 == allusers.size())
+                {
+            usernames.get(j).equals(allusers.get(j).replace("[", ""));  //remove the right bracket
+            usernames.get(j).equals(allusers.get(j).replace("]", ""));  //remove the left bracket
+            usernames.get(j).equals(allusers.get(j).trim());   
+                }
+            
+
+                    
+                
             }
 
+            
+            System.out.println("mindenki: "+ allusers);
+            System.out.println("u: "+ usernames);
+            
+            
+/*
 
             for(int i = 0; i<usernames.size();i++)
             {
@@ -84,25 +100,20 @@ public class Register {
                 passwords.add(password);
 
                 PrintWriter outputStream = null;
-
-
-               //    outputStream.println(usernames);
-                //   outputStream.println(passwords);
-                //   outputStream.println(scores);
-
-               //    outputStream.close();
-                   
+  
                 try 
                 {
                     outputStream =
-                            new PrintWriter(new FileOutputStream ("logindetails.txt", true ));
+                            new PrintWriter(new FileOutputStream ("logindetails.txt", false ));
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
-                   outputStream.println(usernames);
-                   outputStream.println(passwords);
-                   outputStream.println(scores);
+                for (int i =0; i<usernames.size(); i++)
+            {
+                   outputStream.println(usernames.get(i));
+                   outputStream.println(passwords.get(i));
+                   outputStream.println(0);
+            }
 
                    outputStream.close();
 
@@ -110,7 +121,7 @@ public class Register {
                 System.out.println("Now log in. ");
                 LoginFileCheck login1 = new LoginFileCheck();
             
-
+*/
         
     }
 }

@@ -12,8 +12,8 @@ package quizz;
 public class main {
     public static void main(String [] args) 
     {
-       //LoginStart quizz = new LoginStart();
-        LoginFileCheck test = new LoginFileCheck();
+       LoginStart quizz = new LoginStart();
+        //LoginFileCheck test = new LoginFileCheck();
     
                   }
     
