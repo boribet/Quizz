@@ -8,6 +8,7 @@ package quizz;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 public class LoginFileCheck {
     Scanner scan = new Scanner(System.in);
 
-        public LoginFileCheck () {
+        public LoginFileCheck () throws IOException {
 
         UsernameIn username = new UsernameIn(); 
         PasswordIn password = new PasswordIn();
@@ -53,14 +54,6 @@ public class LoginFileCheck {
                 usernames.add(alfa[0]);
                 passwords.add(alfa[1]);
                 scores.add(alfa[2]); 
-                
-            if (j==0)
-                {
-            usernames.get(j).equals(allusers.get(j).replace("[", ""));  //remove the right bracket
-            usernames.get(j).equals(allusers.get(j).replace("]", ""));  //remove the left bracket
-            usernames.get(j).equals(allusers.get(j).trim());   
-                }
-            
             }
 
 
@@ -70,9 +63,10 @@ public class LoginFileCheck {
                 if(usernames.get(i).equals(username.getUsername()) && passwords.get(i).equals(password.getPassword()))
                 {
                     System.out.println("Welcome back!");
+                    String player = username.getUsername();
+                    Quizzmain game = new Quizzmain(player);
                     System.exit(0);
                     break;
-                
                 }
             }
                
@@ -92,6 +86,7 @@ public class LoginFileCheck {
                     break;
                     
             }
+
             }
         
 

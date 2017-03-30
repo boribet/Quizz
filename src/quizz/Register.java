@@ -7,6 +7,7 @@ package quizz;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,7 +27,7 @@ public class Register {
     private String pass;
     private String scorelist;
 
-    public Register()
+    public Register() throws IOException
             
     {
         Scanner read = null;
@@ -61,18 +62,7 @@ public class Register {
                 String [] alfa = allusers.get(j).split(",");
                 usernames.add(alfa[0]);
                 passwords.add(alfa[1]);
-                scores.add(alfa[2]);
-                
-            if (j==0 || j+1 == allusers.size())
-                {
-            usernames.get(j).equals(allusers.get(j).replace("[", ""));  //remove the right bracket
-            usernames.get(j).equals(allusers.get(j).replace("]", ""));  //remove the left bracket
-            usernames.get(j).equals(allusers.get(j).trim());   
-                }
-            
-
-                    
-                
+                scores.add(alfa[2]);   
             }
 
             

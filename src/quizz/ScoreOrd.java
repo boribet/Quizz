@@ -7,6 +7,8 @@ package quizz;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,37 +20,12 @@ import java.util.logging.Logger;
 public class ScoreOrd 
 {
     
-    public String [] ScoreOrd()
+    public ScoreOrd(ArrayList<String> scores)
     {
-        
-        Scanner read = null;
-        
-        try{
-            read = new Scanner (new FileInputStream("logindetails.txt"));
-            
-        }
-        
-        catch (FileNotFoundException ex){
-            Logger.getLogger(LoginFileCheck.class.getName()).log(Level.SEVERE, null, ex);
-            
-        }
-        
-        String user = null;
-        String pass = null;
-        String score =null;
-    
-         while(read.hasNextLine()){
-            user = read.nextLine();
-            pass = read.nextLine();
-            score = read.nextLine();
-        }
-         
-        
-         String[] scorecollect = score.split(",");
-         String[] scores = sort(scorecollect);
-         System.out.println(scores);
-         
-         return scores;
+         String[] temp = new String[scores.size()];
+            temp = scores.toArray(temp);
+         String[] sortedscores = sort(temp);
+         System.out.println(Arrays.toString(sortedscores));
 
         }
     
