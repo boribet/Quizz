@@ -33,45 +33,9 @@ public class Quizzmain {
         }
 
         catch (FileNotFoundException ex){
-            Logger.getLogger(LoginFileCheck.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginFileCheck.class.getName()).log(Level.SEVERE, null, ex);}
 
-        }
-        ArrayList<String> scores = new ArrayList<String>();
-        ArrayList<String> scoresSeparate = new ArrayList<String>();
-        String [] gamma = null;
-        ArrayList<String> allusers = new ArrayList<String>();
         
-        ArrayList<String> scoresO = new ArrayList<String>();
-        ArrayList<String> usernames = new ArrayList<String>();
-        ArrayList<String> passwords = new ArrayList<String>();
-        ArrayList<String> allusersO = new ArrayList<String>();
-  
-        
-        //reading in the file bu only using the scores to create a local variable list of scores
-                    for(int i = 0; read.hasNextLine();i++)
-            {
-                allusers.add(read.nextLine()); 
-            }
-                
-            
-            for(int j = 0; j<allusers.size() ; j++)
-           {    
-
-                String [] alfa = allusers.get(j).split(",");
-                usernames.add(alfa[0]);
-                scores.add(alfa[2]);
-                
-                
-                if(player.equals(usernames.get(j)))
-                {
-                gamma = scores.get(j).split("/");
-                
-                    for(int i=0; i<gamma.length; i++)
-                    {
-                        scoresSeparate.add(gamma[i]);
-                    }
-                }
-           }
             
         Scanner scan = new Scanner(System.in);
         
@@ -156,52 +120,6 @@ public class Quizzmain {
         else            
             System.out.println("questions");
 
-         
-        String d = Integer.toString(actualscore);
-        scores.add(d);
-        ScoreOrd beta = new ScoreOrd(scores);
-        
-        //the part after here is just writing out the scores as they are now unfortunately we have to read in again
-        //as i was unable to return more tan one arraylist from a method, so i could write one that does this
-        
-         for(int i = 0; read.hasNextLine();i++)
-            {
-                allusers.add(read.nextLine()); 
-            }
-                
-            
-            for(int j = 0; j<allusers.size() ; j++)
-           {    
-
-                String [] alfa = allusers.get(j).split(",");
-                usernames.add(alfa[0]);
-                passwords.add(alfa[1]);
-                scoresO.add(alfa[2]);    
-            }
-        
-        PrintWriter outputStream = null;
-  
-                try 
-                {
-                    outputStream =
-                            new PrintWriter(new FileOutputStream ("logindetails.txt", false ));
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                for (int i =0; i<usernames.size(); i++)
-                {
-                  if(player.equals(usernames.get(i)))
-                   {
-                    outputStream.println(usernames.get(i)+","+passwords.get(i)+","+scoresSeparate.get(i));
-                   }
-                   else
-                    outputStream.println(usernames.get(i)+","+passwords.get(i)+","+scoresO.get(i));
-                    
-                   
-            }
-
-                   outputStream.close();
 
         }
                 
